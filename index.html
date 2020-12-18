@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="select.css">
+    <title>Feedback form</title>
+</head>
+<body>
+    <div class="wraper">
+        <div class="form">
+            <form action="#" id="form" class="form__body">
+                <h1 class="form__title">Data sending to E-mail</h1>
+                <div class="form__item">
+                    <label for="formName" class="form__label">Name*:</label>
+                    <input id="formName" type="text" name="name" class="form__input _req">
+                </div>
+                <div class="form__item">
+                    <label for="formEmail" class="form__label">E-mail*:</label>
+                    <input id="formEmail" type="text" name="name" class="form__input _req _email">
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Left or right hand?</div>
+                    <div class="options">
+                        <div class="options__item">
+                            <input id="formRightHanded" checked type="radio" value="right" name="hand"
+                                class="options__input">
+                            <label for="formRightHanded" class="options__label"><span>Rigtht handed</span></label>
+                        </div>
+                        <div class="options__item">
+                            <input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
+                            <label for="formLeftHanded" class="options__label"><span>Left handed</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Message:</label>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Age:</div>
+                    <select name="age" class="form__select">
+                        <option value="from 18 to 25" selected="selected">from 18 to 25</option>
+                        <option value="from 25 to 45">from 25 to 45</option>
+                        <option value="from 45">from 45</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Upload photo</div>
+                    <div class="file">
+                        <div class="file__item">
+                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+                            <div class="file__button">Select</div>
+                        </div>
+                        <div id="formPreview" class="file__preview"></div>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <div class="checkbox">
+                        <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
+                        <label for="formAgreement" class="checkbox__label"><span>Piekrītu, ka mani dati tiks apstrādāti
+                                saskaņā ar datu lietošanas <a href="#">noteikumiem</a></span></label>
+                    </div>
+                </div>
+                <button type="submit" class="form__button">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="select.js"></script>
+    <script src="FbForm.js"></script>
+</body>
+
+</html>
