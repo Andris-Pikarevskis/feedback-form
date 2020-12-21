@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if(error === 0){
             form.classList.add('_sending');
-            /*
             let response = await fetch('sendmail.php', {
                 method: 'POST',
                 body: formData
@@ -24,10 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert(result.message);
                 formPreview.innerHTML = '';
                 form.reset();
+                form.classList.remove('_sending');
             }else{
                 alert('404 :)')
+                form.classList.remove('_sending');
             }
-            */
         }else{
             alert('Fill in the required fields')
         }
