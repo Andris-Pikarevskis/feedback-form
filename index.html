@@ -1,26 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="indexStyle.css">
     <link rel="stylesheet" href="select.css">
-    <title>Feedback form</title>
+    <title>Home page form</title>
 </head>
+
 <body>
     <div class="wraper">
         <div class="form">
             <form action="#" id="form" class="form__body">
-                <h1 class="form__title">Data sending to E-mail</h1>
+                <h1 class="form__title">Kontaktinformācija</h1>
+                <p class="form__paragraph">Paldies, ka atrdāt laiku aizpildīt šo formu. Atceraties, ka maksimāli
+                    detalizēti aizpildīta forma palīdzēs iegūt mājas lapu kura maksimāli atbilst Jūs prasībām.</p>
+
+                <p class="form__paragraph">Ar * ir atzīmēti lauki kuri ir obligāti jāaizpilda.</p>
+
+
                 <div class="form__item">
-                    <label for="formName" class="form__label">Name*:</label>
+                    <label for="formName" class="form__label">Uzņēmuma nosaukums*:</label>
                     <input id="formName" type="text" name="name" class="form__input _req">
                 </div>
                 <div class="form__item">
-                    <label for="formEmail" class="form__label">E-mail*:</label>
+                    <label for="formName" class="form__label">Kontaktpersona*:</label>
+                    <input id="formPersonName" type="text" name="kontakpersona" class="form__input _req">
+                </div>
+                <div class="form__item">
+                    <label for="formName" class="form__label">Tālruņa numurs*:</label>
+                    <input id="formPhoneNumber" type="text" name="formPhoneNumber" class="form__input _req">
+                    <div class="msg"></div>
+                </div>
+                <div class="form__item">
+                    <label for="formEmail" class="form__label">E-pasts*:</label>
                     <input id="formEmail" type="text" name="name" class="form__input _req _email">
                 </div>
                 <div class="form__item">
+                    <label for="formMessage" class="form__label">Citi kontakti:</label>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+
+
+
+                <h1 class="form__title">Par uzņēmumu</h1>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Nodarbošanās un nozare:</label>
+                    <p class="form__label">Norādiet jūsu nodarbošanās nozari</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Produkts/pakalpojums:</label>
+                    <p class="form__label">Norādiet preces un/vai pakalpojumus, kurus jūs sniedzat klientiem</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Produkta/pakalpojuma apraksts:</label>
+                    <p class="form__label">Aprakstiet galvenās īpašības, tehniskos parametrus, </p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Unikālais pedāvajums.:</label>
+                    <p class="form__label">Aprakstiet ar ko jūs pakalpojums/produkts ir īpašs un unikāls, kāpēc to
+                        izvēlas klienti</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Ģeogrāfija.:</label>
+                    <p class="form__label">Kādos reģionos jūs sniedzat pakalpojumus</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Īs apraksts.:</label>
+                    <p class="form__label">Īsumā pastāstiet par savu uzņēmumu</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+                <div class="form__item">
+                    <label for="formMessage" class="form__label">Suciālie tīkli.:</label>
+                    <p class="form__label">NOrādiet saites uz sociālajiem tīkliem</p>
+                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                </div>
+
+
+                <h1 class="form__title">Lietotāji, potencionālie apmeklētāji</h1>
+                <div class="form__item">
+                    <div class="form__label">Lietotāju dzimums</div>
+                    <div class="options">
+                        <div class="options__item">
+                            <input id="formRightHanded" checked type="radio" value="right" name="hand" class="options__input">
+                            <label for="formRightHanded" class="options__label"><span>Vīrieši</span></label>
+                        </div>
+                        <div class="options__item">
+                            <input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
+                            <label for="formLeftHanded" class="options__label"><span>Sievietes</span></label>
+                        </div>
+                        <div class="options__item">
+                            <input id="formBothHanded" type="radio" value="both" name="hand" class="options__input">
+                            <label for="formBothHanded" class="options__label"><span>Gan/gan</span></label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="form__item">
                     <div class="form__label">Left or right hand?</div>
                     <div class="options">
                         <div class="options__item">
@@ -33,7 +116,7 @@
                             <label for="formLeftHanded" class="options__label"><span>Left handed</span></label>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="form__item">
                     <label for="formMessage" class="form__label">Message:</label>
                     <textarea name="message" id="formMessage" class="form__input"></textarea>
@@ -50,7 +133,8 @@
                     <div class="form__label">Upload photo</div>
                     <div class="file">
                         <div class="file__item">
-                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image"
+                                class="file__input">
                             <div class="file__button">Select</div>
                         </div>
                         <div id="formPreview" class="file__preview"></div>
@@ -65,6 +149,7 @@
                 </div>
                 <button type="submit" class="form__button">Send</button>
             </form>
+
         </div>
     </div>
     <script src="select.js"></script>

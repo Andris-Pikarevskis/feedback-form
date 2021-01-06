@@ -12,24 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
         let formData = new FormData(form);
         formData.append('image', formImage.files[0]);
 
-        if(error === 0){
+        if (error === 0) {
             form.classList.add('_sending');
             let response = await fetch('sendmail.php', {
                 method: 'POST',
                 body: formData
             });
-            if(response.ok){
+            if (response.ok) {
                 let result = await response.json();
                 alert(result.message);
                 formPreview.innerHTML = '';
                 form.reset();
                 form.classList.remove('_sending');
-            }else{
+            } else {
                 alert('404 :)')
                 form.classList.remove('_sending');
             }
-        }else{
-            alert('Fill in the required fields')
+        } else {
+            alert('Aizpildiet nepieciešamos laukus')
         }
     }
 
@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return error;
     }
     function formAddError(input) {
-		input.parentElement.classList.add('_error');
-		input.classList.add('_error');
-	}
-	function formRemoveError(input) {
-		input.parentElement.classList.remove('_error');
-		input.classList.remove('_error');
-	}
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
     //check email function - does the email meet the requirements
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
@@ -75,32 +75,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //get input file in preview
     const formImage = document.getElementById('formImage');
-	const formPreview = document.getElementById('formPreview');
-    
-    
+    const formPreview = document.getElementById('formPreview');
+
+
     formImage.addEventListener('change', () => {
-		uploadFile(formImage.files[0]);
-	});
+        uploadFile(formImage.files[0]);
+    });
 
     function uploadFile(file) {
-		// провераяем тип файла
-		if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-			alert('You can add only images');
-			formImage.value = '';
-			return;
-		}
+        // провераяем тип файла
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+            alert('You can add only images');
+            formImage.value = '';
+            return;
+        }
         if (file.size > 2 * 1024 * 10204) {
-            alert('File size must be mess than 2 MB');
+            alert('File size must be less than 2 MB');
             return;
         }
 
         var reader = new FileReader();
-		reader.onload = function (e) {
+        reader.onload = function (e) {
             formPreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded photo">`;
         };
-        reader.onerror =  function (e) {
+        reader.onerror = function (e) {
             alert('404 :)')
         };
         reader.readAsDataURL(file);
     }
 });
+
+//phone number input
+let formPhoneNumber = document.querySelector('input#formPhoneNumber');
+formPhoneNumber.addEventListener('keyup', function (e) {
+    this.value = this.value.replace(/[^0-9]/, '');
+});
+
+// let phoneNumber = document.getElemenetById('formPhoneNumber').value;
+
+// if (phoneNumber.length > 8) {
+//     alert('msg');
+// }
+
+
+
+// formPhoneNumber.addEventListener('keyup', function (evt) {
+//     let length = this.value.length
+//     if (length < 8) {
+//         console.log('not enought');
+//     }
+// });

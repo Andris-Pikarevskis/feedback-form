@@ -70,6 +70,12 @@ body {
     font-weight: 700;
     margin: 0px 0px 30px 0px;
 }
+.form__paragraph{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0px 0px 15px 0px;
+}
 .form__item {
     margin: 0px 0px 20px 0px;
 }
@@ -110,7 +116,7 @@ textarea.form__input{
     display: none;
 }
 
-.options__input:checked + .options__label::after{
+.options__input:checked + .options__label::after {
     transform: scale(1);
 }
 
